@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coleção | Maresea</title>
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;color:#35232c;background:white}
+a{text-decoration:none;color:inherit}
+.top{background:#873d5b;color:white;text-align:center;padding:10px;font-size:11px;letter-spacing:2px}
+header{max-width:1150px;margin:auto;padding:25px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+.logo{font:32px Georgia;letter-spacing:4px;text-align:center}
+.logo small{display:block;font:10px Arial;letter-spacing:4px;color:#873d5b}
+nav{display:flex;gap:25px;font-size:12px;text-transform:uppercase}
+.btn{background:#873d5b;color:white;padding:14px 22px;display:inline-block;font-size:11px}
+main{max-width:1150px;margin:auto;padding:30px 20px 75px}
+.title{text-align:center;padding:35px 0}
+.title h1{font:50px Georgia;font-weight:normal}
+.title p{color:#806e75;font-size:13px}
+.filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:25px 0 40px}
+.filters button{background:white;border:1px solid #f0e3e8;padding:11px 18px;cursor:pointer;color:#806e75}
+.filters button.active,.filters button:hover{background:#873d5b;color:white}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.product img{width:100%;height:350px;object-fit:cover}
+.product h3{font:20px Georgia;font-weight:normal;margin-bottom:5px}
+.price{color:#873d5b;font-size:13px}
+.buy{display:inline-block;margin-top:10px;font-size:11px;border-bottom:1px solid #e88eaa;padding-bottom:4px}
+footer{text-align:center;padding:40px;background:#fff8fa;color:#806e75;font-size:12px}
+.float{position:fixed;bottom:20px;right:20px;background:#873d5b;color:white;padding:15px 20px;border-radius:30px;font-size:12px}
+@media(max-width:700px){
+header{justify-content:center}
+nav{width:100%;justify-content:center}
+.products{grid-template-columns:repeat(2,1fr);gap:12px}
+.product img{height:220px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="top">MARESEA • MODA PRAIA</div>
+
+<header>
+<a href="index.html" class="logo">MARESEA<small>MODA PRAIA</small></a>
+<nav>
+<a href="index.html">Início</a>
+<a href="colecao.html">Coleção</a>
+<a href="#contato">Contato</a>
+</nav>
+<a class="btn" href="index.html">VOLTAR</a>
+</header>
+
+<main>
+<div class="title">
+<span style="color:#873d5b;letter-spacing:3px;font-size:11px">EXPLORE MARESEA</span>
+<h1>Nossa coleção</h1>
+<p>Escolha suas peças favoritas e fale com a gente para finalizar seu pedido.</p>
+</div>
+
+<div class="filters">
+<button class="active" onclick="filter('Todos',this)">Todos</button>
+<button onclick="filter('Biquínis',this)">Biquínis</button>
+<button onclick="filter('Saídas',this)">Saídas de praia</button>
+<button onclick="filter('Conjuntos',this)">Conjuntos</button>
+<button onclick="filter('Acessórios',this)">Acessórios</button>
+</div>
+
+<div class="products">
+
+<div class="product" data-category="Biquínis">
+<img src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?auto=format&fit=crop&w=700&q=80">
+<h3>Biquíni Sol</h3>
+<p class="price">R$ 129,90</p>
+<a class="buy" href="#" onclick="buy('Biquíni Sol')">CONSULTAR / COMPRAR</a>
+</div>
+
+<div class="product" data-category="Biquínis">
+<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80">
+<h3>Biquíni Serena</h3>
+<p class="price">R$ 139,90</p>
+<a class="buy" href="#" onclick="buy('Biquíni Serena')">CONSULTAR / COMPRAR</a>
+</div>
+
+<div class="product" data-category="Saídas">
+<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80">
+<h3>Saída Aurora</h3>
+<p class="price">R$ 159,90</p>
+<a class="buy" href="#" onclick="buy('Saída Aurora')">CONSULTAR / COMPRAR</a>
+</div>
+
+<div class="product" data-category="Conjuntos">
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=80">
+<h3>Conjunto Maré</h3>
+<p class="price">R$ 149,90</p>
+<a class="buy" href="#" onclick="buy('Conjunto Maré')">CONSULTAR / COMPRAR</a>
+</div>
+
+<div class="product" data-category="Biquínis">
+<img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=700&q=80">
+<h3>Biquíni Brisa</h3>
+<p class="price">R$ 119,90</p>
+<a class="buy" href="#" onclick="buy('Biquíni Brisa')">CONSULTAR / COMPRAR</a>
+</div>
+
+<div class="product" data-category="Acessórios">
+<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80">
+<h3>Acessório Oceano</h3>
+<p class="price">R$ 49,90</p>
+<a class="buy" href="#" onclick="buy('Acessório Oceano')">CONSULTAR / COMPRAR</a>
+</div>
+
+</div>
+</main>
+
+<footer id="contato">
+<h2 style="font:28px Georgia;color:#35232c">MARESEA</h2>
+<p>Seu verão começa aqui.</p>
+<p>© 2026 Maresea. Todos os direitos reservados.</p>
+</footer>
+
+<a class="float" href="#contato">Continue por aqui ↗</a>
+
+<script>
+function filter(category,button){
+document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
+button.classList.add('active');
+
+document.querySelectorAll('.product').forEach(product=>{
+product.style.display=(category==='Todos'||product.dataset.category===category)?'':'none';
+});
+}
+
+const WHATSAPP_NUMBER = ""; // Coloque o número da loja com DDI e DDD
+
+function buy(product){
+if(!WHATSAPP_NUMBER){
+alert("O WhatsApp da loja será configurado em breve.");
+return;
+}
+const message=encodeURIComponent("Olá! Tenho interesse no produto "+product+".");
+window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+message,"_blank");
+}
+</script>
+
+</body>
+</html>
